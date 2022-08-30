@@ -89,7 +89,7 @@ export const likePost = async (req, res) => {
 export const getTimeLinePosts = async (req, res) => {
   const userId = req.params.id;
   try {
-    const currentUserPosts = PostModel.find({ userId: userId });
+    const currentUserPosts = await PostModel.find({ userId: userId });
     const followingPosts = await UserModel.aggregate([
       {
         $match: {
@@ -112,7 +112,7 @@ export const getTimeLinePosts = async (req, res) => {
       },
     ]);
     res.status(200).json(
-      (await currentUserPosts)
+      currentUserPosts
         .concat(...followingPosts[0].followingPosts)
         .sort((a, b) => {
           return b.createdAt - a.createdAt;
