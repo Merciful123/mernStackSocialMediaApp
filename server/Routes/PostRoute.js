@@ -18,3 +18,4 @@ router.put("/:id/like", likePost);
 router.get("/:id/timeline", getTimeLinePosts);
 
 export default router;
+

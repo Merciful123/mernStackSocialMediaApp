@@ -15,6 +15,7 @@
 
 .infoHead>div:hover {
     cursor: pointer;
+    color: red;
 }
 
 .logout-btn {

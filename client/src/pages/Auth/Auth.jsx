@@ -123,6 +123,7 @@ const Auth = () => {
               style={{
                 fontSize: "12px",
                 cursor: "pointer",
+                color: "blue",
               }}
               onClick={() => {
                 setIsSignUp((prev) => !prev);
