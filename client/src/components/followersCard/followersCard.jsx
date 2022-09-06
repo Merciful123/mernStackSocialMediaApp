@@ -9,20 +9,18 @@ const FollowersCard = () => {
   const [persons, setPerson] = useState([]);
   const { user } = useSelector((state) => state.authReducer.authData);
   useEffect(() => {
-    const fetchPerson = async () => {
+    const fetchPersons = async () => {
       const { data } = await getAllUser();
       setPerson(data);
       console.log(data);
     };
-    fetchPerson();
+    fetchPersons();
   }, []);
   return (
     <div className="FollowersCard">
       <h3>People you may know</h3>
       {persons.map((person, id) => {
-        if (person._id !== user._id) {
-          return <User person={person} key={id} />;
-        }
+        if (person._id !== user._id) return <User person={person} key={id} />;
       })}
     </div>
   );

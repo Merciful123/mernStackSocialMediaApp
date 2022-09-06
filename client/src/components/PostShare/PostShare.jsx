@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Img from "../../img/profileImg.jfif";
+// import Img from "../../img/profileImg.jfif";
 import "./PostShare.css";
 import { useDispatch, useSelector } from "react-redux";
 import { UilScenery } from "@iconscout/react-unicons";
