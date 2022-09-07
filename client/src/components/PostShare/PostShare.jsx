@@ -46,7 +46,7 @@ const PostShare = () => {
         console.log(error);
       }
     }
-    dispatch(uploadPost(newPost));
+    dispatch(uploadPost(newPost)); 
     reset();
   };
   return (
